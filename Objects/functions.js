@@ -17,4 +17,20 @@ function loggedIn(){
     // console.log(password); It will give an error outer function cant access the properties of the inner functions due to the variacle scope 
 }
 
-loggedIn();
+// loggedIn();
+
+
+// expression functions 
+
+const sayHello = function sayHello(){
+    console.log("Hello world");
+}
+
+
+
+function sayHello(){
+    console.log("Hello world");
+}
+
+
+// difference between normal functions and expression functions is we can call the normal functions before its declarations but not same case with the function expressions
