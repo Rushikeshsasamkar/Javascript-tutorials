@@ -1,7 +1,20 @@
-function sayHello(user){
+function sayHello(user="default"){
     return `${user} is just logged in`;
 }
 
-let res = sayHello('Rushikesh');
+let res = sayHello();
 
-console.log(res);
+// console.log(res);
+
+
+function loggedIn(){
+    const userId = "rahul123";
+    function proces2(){
+        const password = 'rahul';
+        console.log(`${userId} ${password}`);
+    }
+    proces2()
+    // console.log(password); It will give an error outer function cant access the properties of the inner functions due to the variacle scope 
+}
+
+loggedIn();
