@@ -7,9 +7,13 @@
 </head>
 <body>
     <h1>Hello Coders</h1>
-    <button id="stop">Stop Timeout</button>
     
     <button id="start">Start Timeout</button>
+   
+    <button id="stop">Stop Timeout</button>
+   
+
+    <h2></h2>
     
     
 
@@ -25,6 +29,25 @@
         //     console.log('clicked');
         // })
 
+
+        const sayDate = () => {
+            const date = new Date().toLocaleTimeString();
+            document.querySelector('h2').innerHTML = date;
+        }
+
+        let intervalId; // Declare intervalId outside the functions to make it accessible globally.
+
+        const startTimer = () => {
+            intervalId = setInterval(sayDate, 1000);
+        }
+
+        const stopTimer = () => {
+            clearInterval(intervalId);
+        }
+
+        document.querySelector('#start').addEventListener('click', startTimer);
+        document.querySelector('#stop').addEventListener('click', stopTimer);
     </script>
+
 </body>
 </html>
