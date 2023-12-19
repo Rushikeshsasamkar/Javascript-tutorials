@@ -19,12 +19,36 @@
    </div>
 
    <script>
-    const images = document.querySelectorAll('ul');
-    images.forEach((image)=>{
-        image.addEventListener('click',function(e){
-            alert(e.target.id)
-        })
-    })
+    // in below code we can attach the same event to all the images
+    // const images = document.querySelectorAll('ul');
+    // images.forEach((image)=>{
+    //     image.addEventListener('click',(e)=>{
+    //         alert(`You clicked on ${e.target.id}`)
+    //     })
+    // })
+
+    // document.getElementById('images').addEventListener('click', function(e){
+    //     console.log("clicked inside the ul");
+    // }, false)
+
+    // document.getElementById('owl').addEventListener('click', function(e){
+    //     console.log("owl clicked");
+    //     e.stopPropagation()
+    // }, false)
+
+    // document.getElementById('google').addEventListener('click',(e)=>{
+    //     e.preventDefault();
+    //     console.log('clicked on google');
+    // },false)
+
+    document.getElementById('images').addEventListener('click',(e)=>{
+        console.log(e.target.parentNode);
+        if(e.target.tagName === 'IMG'){
+            console.log(e.target.tagName);
+        const removeNode = e.target.parentNode
+        removeNode.remove();    //removing the node
+        }
+    })    
 
    </script>
 </body>
